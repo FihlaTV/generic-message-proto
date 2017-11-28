@@ -20,7 +20,21 @@ message GenericMessage {
     Confirmation confirmation = 16;
     Reaction reaction = 17;
     Ephemeral ephemeral = 18;
+    ActivityStatus activityStatus = 19;
   }
+}
+
+message ActivityStatus {
+  enum Type {
+    BREAK = 1;
+    NONE = 0;
+    REMOTE = 2;
+    SICK = 3;
+    UNAVAILABLE = 4;
+    VACATION = 5;
+  }
+
+  required Type type = 1;
 }
 
 message Ephemeral {
